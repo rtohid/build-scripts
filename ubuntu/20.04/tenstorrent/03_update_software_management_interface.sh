@@ -11,8 +11,8 @@ source ~/.python_envs/tt_grayskull/bin/activate
 echo
 echo "*** Installing tt-smi (Tenstorrent System Management Interface) ***"
 pip install pip-tools
-pip-compile requirements.in
-pip install -r requirements.txt
+wget https://raw.githubusercontent.com/tenstorrent/tt-metal/main/pyproject.toml
+pip-compile -o requirements.txt pyproject.toml
 pip install git+https://github.com/tenstorrent/tt-smi
 echo "*** Done installing tt-smi ***"
 
